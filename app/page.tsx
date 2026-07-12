@@ -1,9 +1,11 @@
+import MinecraftPreloader from "@/components/MinecraftPreloader";
 import ReactLenis from "lenis/react";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
+      <MinecraftPreloader />
       <div className="min-h-screen w-full">
         <ReactLenis />
         {/* hero section  */}
