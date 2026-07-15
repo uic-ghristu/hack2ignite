@@ -8,6 +8,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        minecraft: "minecraft-font hover:scale-102 transition-all ring-2 ring-black border-white border-t-2 text-white font-bold hover:bg-[#7e7e7e] rounded-none bg-[#909090] hover:text-white",
         default: "bg-primary text-primary-foreground hover:bg-primary/80",
         outline:
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
