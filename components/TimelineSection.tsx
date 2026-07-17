@@ -18,7 +18,7 @@ const scheduleEvents: ScheduleItem[] = [
     duration: "20+ Days",
     dates: "18 July – 10 August",
     badge: "Open for All",
-    description: "Open registration for participants across the country hosted on unstop.com. Assemble your team and ignite your ideas!",
+    description: "Open registration for participants across the country hosted on unstop.com.",
     icon: "📝",
   },
   {
@@ -212,13 +212,8 @@ export default function TimelineSection() {
           style={{ x: sunX, y: sunY, opacity: sunOpacity }}
           className="absolute top-0 left-0 w-20 h-20 md:w-24 md:h-24 pointer-events-none drop-shadow-[0_0_24px_rgba(255,255,255,0.9)]"
         >
-          <div className="absolute -inset-3 bg-white/40 border-2 border-black/30 shadow-[0_0_30px_rgba(255,255,255,0.8)]" />
-          <div className="relative w-full h-full bg-white border-4 border-black shadow-[6px_6px_0_#000] p-1.5 flex flex-col justify-between">
-            <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white border border-black" />
-            <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-white border border-black" />
-            <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-white border border-black" />
-            <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-white border border-black" />
-
+          <div className="absolute -inset-3 bg-white/40" />
+          <div className="relative w-full h-full bg-white p-1.5 flex flex-col justify-between">
             <div className="w-full h-full border-2 border-black/20 p-1 flex flex-col justify-between">
               <div className="flex justify-between">
                 <div className="w-2.5 h-2.5 bg-yellow-100/80" />
@@ -231,36 +226,14 @@ export default function TimelineSection() {
             </div>
           </div>
         </motion.div>
-
-        {/* Pure White Minecraft Moon (Rises from Downside -> Night Sky) */}
-        <motion.div
-          style={{ x: moonX, y: moonY, opacity: moonOpacity }}
-          className="absolute top-0 left-0 w-20 h-20 md:w-24 md:h-24 pointer-events-none drop-shadow-[0_0_24px_rgba(255,255,255,0.8)]"
-        >
-          <div className="absolute -inset-3 bg-sky-100/30 border-2 border-black/30 shadow-[0_0_30px_rgba(255,255,255,0.7)]" />
-          <div className="relative w-full h-full bg-white border-4 border-black shadow-[6px_6px_0_#000] p-1.5 flex flex-col justify-between">
-            <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white border border-black" />
-            <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-white border border-black" />
-            <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-white border border-black" />
-            <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-white border border-black" />
-
-            <div className="w-full h-full border-2 border-black/20 p-1 flex flex-col justify-between">
-              <div className="flex flex-col justify-around h-full">
-                <div className="w-3 h-3 bg-slate-300/80 border border-slate-400 ml-auto" />
-                <div className="w-2.5 h-2.5 bg-slate-300/80 border border-slate-400 ml-2" />
-                <div className="w-4 h-2 bg-slate-300/60 border border-slate-400 ml-6" />
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       {/* Header Section */}
       <div className="relative z-10 text-center mb-20">
-        <h2 className="minecraft-font text-4xl md:text-6xl text-white drop-shadow-[0_4px_0_#000] tracking-wider uppercase">
+        <h2 className="minecraft-font text-4xl md:text-6xl text-white">
           Timeline & Schedule
         </h2>
-        <p className="minecraft-font text-amber-200 text-lg md:text-2xl mt-4 drop-shadow-[0_2px_0_#000]">
+        <p className="minecraft-font text-amber-200 text-lg md:text-2xl mt-4">
           Follow the journey from registration to the grand finale
         </p>
       </div>
@@ -268,13 +241,16 @@ export default function TimelineSection() {
       {/* Timeline Wrapper */}
       <div className="relative max-w-5xl mx-auto z-10 pb-24">
         {/* Track Line Background (Grey/Black Minecraft Rail) */}
-        <div className="absolute left-1/2 top-4 bottom-4 w-3 -translate-x-1/2 bg-black/40 border-2 border-amber-950/60 rounded-none z-0" />
+        <div className="absolute left-1/2 top-4 bottom-4 w-4 -translate-x-1/2 bg-neutral-900 border-2 border-black rounded-none z-0 shadow-[inset_0_0_8px_rgba(0,0,0,0.8)]" />
 
-        {/* Animated Central Progress Line (Gold Minecraft Pixel Line) */}
+        {/* Animated Central Progress Line (Green Minecraft Loader Line) */}
         <motion.div
           style={{ height: lineHeight }}
-          className="absolute left-1/2 top-4 w-3 -translate-x-1/2 bg-gradient-to-b from-yellow-300 via-amber-400 to-amber-600 border-x-2 border-black z-0 shadow-[0_0_14px_rgba(251,191,36,0.9)]"
-        />
+          className="absolute left-1/2 top-4 w-4 -translate-x-1/2 bg-green-500 border-x-2 border-black z-0 shadow-[0_0_15px_rgba(34,197,94,0.8)] overflow-hidden"
+        >
+          {/* Minecraft XP Bar Notches */}
+          <div className="w-full h-full opacity-60" style={{ backgroundImage: 'repeating-linear-gradient(to bottom, transparent, transparent 12px, rgba(0,0,0,0.6) 12px, rgba(0,0,0,0.6) 16px)' }} />
+        </motion.div>
 
         {/* Timeline Items */}
         <div className="flex flex-col gap-24 relative z-10">
@@ -287,42 +263,43 @@ export default function TimelineSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex flex-col md:flex-row items-center justify-between w-full ${
-                  isEven ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className={`flex flex-col md:flex-row items-center justify-between w-full ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
               >
-                {/* Content Box (Minecraft Styled Card) */}
+                {/* Content Box (Paper Card) */}
                 <div className="w-full md:w-[45%]">
-                  <div className="relative bg-[#262626] border-4 border-black p-6 shadow-[6px_6px_0_#000] hover:translate-y-[-2px] transition-transform">
-                    {/* Corner Pixel Trims */}
-                    <div className="absolute -top-1 -left-1 w-2 h-2 bg-white border border-black" />
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-white border border-black" />
-                    <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white border border-black" />
-                    <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-white border border-black" />
+                  <div className="relative p-10 md:p-12 lg:p-16 hover:translate-y-[-2px] transition-transform flex flex-col justify-center min-h-[260px] md:min-h-[280px]">
+                    <Image
+                      src="/stock/paper.png"
+                      alt="Paper background"
+                      fill
+                      className="object-fill -z-10 drop-shadow-xl"
+                      draggable={false}
+                    />
 
                     {/* Top Header Row */}
-                    <div className="flex items-center justify-between border-b-2 border-neutral-700 pb-3 mb-4">
-                      <span className="minecraft-font text-amber-400 text-xs md:text-sm bg-neutral-900 border border-amber-600 px-3 py-1 uppercase tracking-wider">
+                    <div className="flex items-center justify-between border-b-2 border-amber-900/20 pb-3 mb-4">
+                      <span className="minecraft-font text-amber-900 text-xs md:text-sm bg-amber-100/50 border border-amber-900/30 px-3 py-1 uppercase tracking-wider">
                         {item.badge}
                       </span>
-                      <span className="minecraft-font text-emerald-400 text-sm md:text-base font-bold">
+                      <span className="minecraft-font text-emerald-800 text-sm md:text-base font-bold">
                         {item.duration}
                       </span>
                     </div>
 
                     {/* Phase Title */}
-                    <h3 className="minecraft-font text-white text-xl md:text-2xl mb-2 flex items-center gap-3">
+                    <h3 className="minecraft-font text-neutral-900 text-xl md:text-2xl mb-2 flex items-center gap-3 drop-shadow-[0_1px_0_rgba(255,255,255,0.5)]">
                       <span>{item.icon}</span>
                       <span>{item.phase}</span>
                     </h3>
 
                     {/* Dates */}
-                    <p className="minecraft-font text-yellow-300 text-sm md:text-base mb-4">
+                    <p className="minecraft-font text-amber-800 text-sm md:text-base mb-4 font-semibold">
                       📅 {item.dates}
                     </p>
 
                     {/* Description */}
-                    <p className="minecraft-font text-neutral-300 text-sm leading-relaxed border-t border-neutral-800 pt-3">
+                    <p className="minecraft-font text-neutral-800 text-sm leading-relaxed border-t border-amber-900/20 pt-3 font-medium">
                       {item.description}
                     </p>
                   </div>
