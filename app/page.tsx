@@ -1,4 +1,3 @@
-import ReactLenis from 'lenis/react'
 import Image from 'next/image'
 import { CloudShader } from "@/components/ui/cloud-shader";
 import Link from 'next/link';
@@ -6,6 +5,9 @@ import { Jersey_20 } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { FlyingBee } from '@/components/flying-bee';
 import { CountdownTimer } from '@/components/countdown-timer';
+import { OverlapSection } from '@/components/overlap-section';
+import { SmoothScroll } from '@/components/smooth-scroll';
+import { Timeline } from '@/components/timeline';
 
 const pixelFont = Jersey_20({
   weight: "400"
@@ -14,10 +16,8 @@ const pixelFont = Jersey_20({
 
 function LandingPage() {
   return (
-    <div
-      className='min-h-screen w-full'
-    >
-      <ReactLenis />
+    <SmoothScroll>
+    <div className='min-h-screen w-full'>
       <div className="h-screen w-full bg-[#90C5EF] flex flex-col items-center justify-center">
         <nav 
         className={cn(
@@ -37,14 +37,14 @@ function LandingPage() {
           <div className="flex text-white items-center justify-center gap-10">
 
           {
-            [{name: "Prizes"}, {name: "Tracks"}, {name: "Timeline"}].map((link)=>
-              <Link key={link.name} href={"#"} className='text-2xl'>{link.name}</Link>
+            [{name: "Prizes", href: "#prizes"}, {name: "Tracks", href: "#"}, {name: "Timeline", href: "#timeline"}].map((link)=>
+              <Link key={link.name} href={link.href} className='text-2xl'>{link.name}</Link>
           )
         }
         </div>
         <div className="">
           <button
-          className='text-2xl'
+          className='text-2xl text-white'
           >
             Register Now
           </button>
@@ -76,18 +76,24 @@ function LandingPage() {
       </div>
       
       {/* section 2 */}
-      <div className="h-screen w-full bg-[#90C5EF] relative overflow-hidden">
-        <CountdownTimer className={pixelFont.className} />
-        <FlyingBee />
-        <Image
-          className='absolute bottom-0'
-          height={1000}
-          width={2000}
-          alt='bg'
-          src={'/background1.png'}
-        />
-      </div>
+      <div className="relative bg-[#90C5EF]">
+        <div className="sticky top-0 z-0 h-screen w-full overflow-hidden">
+          <CountdownTimer className={pixelFont.className} />
+          <FlyingBee />
+          <Image
+            className='absolute bottom-0 w-full'
+            height={1000}
+            width={2000}
+            alt='bg'
+            src={'/background.png'}
+          />
+        </div>
+        <OverlapSection className={pixelFont.className} />
+      </div>      
     </div>
+
+    <Timeline className={pixelFont.className} />
+    </SmoothScroll>
   )
 }
 

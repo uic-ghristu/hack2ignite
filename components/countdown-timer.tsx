@@ -46,7 +46,7 @@ export function CountdownTimer({ className }: { className?: string }) {
     <div
       className={cn(
         className,
-        "pointer-events-none absolute top-[18%] left-1/2 z-[5] w-full -translate-x-1/2 px-4 text-center text-white"
+        "pointer-events-none absolute top-[8%] left-1/2 z-[5] w-full -translate-x-1/2 px-4 text-center text-white"
       )}
       role="timer"
       aria-live="polite"
