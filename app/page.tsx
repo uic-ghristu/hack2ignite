@@ -4,6 +4,8 @@ import { CloudShader } from "@/components/ui/cloud-shader";
 import Link from 'next/link';
 import { Jersey_20 } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { FlyingBee } from '@/components/flying-bee';
+import { CountdownTimer } from '@/components/countdown-timer';
 
 const pixelFont = Jersey_20({
   weight: "400"
@@ -72,7 +74,11 @@ function LandingPage() {
           </div>
         </div>
       </div>
-      <div className="h-screen w-full bg-[#90C5EF] relative">
+      
+      {/* section 2 */}
+      <div className="h-screen w-full bg-[#90C5EF] relative overflow-hidden">
+        <CountdownTimer className={pixelFont.className} />
+        <FlyingBee />
         <Image
           className='absolute bottom-0'
           height={1000}
