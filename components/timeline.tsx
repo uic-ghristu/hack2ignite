@@ -8,6 +8,7 @@ import {
   useSpring,
 } from "motion/react";
 import { cn } from "@/lib/utils";
+import Snowfall from "react-snowfall";
 
 const events = [
   {
@@ -103,18 +104,9 @@ export function Timeline({ className }: { className?: string }) {
 
       if (!nodes.length) return;
 
-      const start = {
-        x: desktop ? box.width / 2 : 22,
-        y: 0,
-      };
-      const end = {
-        x: nodes[nodes.length - 1].x,
-        y: box.height,
-      };
-
       setSize({ w: box.width, h: box.height });
       setDots(nodes);
-      setPath(curveThrough([start, ...nodes, end]));
+      setPath(curveThrough(nodes));
     };
 
     measure();
@@ -138,6 +130,12 @@ export function Timeline({ className }: { className?: string }) {
         className
       )}
     >
+      <Snowfall
+        snowflakeCount={15}
+        speed={[0, 0.5]}
+        wind={[0, 0.5]}
+        radius={[0.5, 1.5]}
+      />
       <h1 className="text-center text-5xl leading-none sm:text-6xl md:text-7xl">
         Timeline
       </h1>

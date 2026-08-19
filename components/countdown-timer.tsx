@@ -46,7 +46,7 @@ export function CountdownTimer({ className }: { className?: string }) {
     <div
       className={cn(
         className,
-        "pointer-events-none absolute top-[8%] left-1/2 z-[5] w-full -translate-x-1/2 px-4 text-center text-white"
+        "pointer-events-none absolute top-[12%] sm:top-[8%] left-1/2 z-[5] w-full -translate-x-1/2 px-4 text-center text-white"
       )}
       role="timer"
       aria-live="polite"
@@ -56,8 +56,8 @@ export function CountdownTimer({ className }: { className?: string }) {
           : "Loading countdown"
       }
     >
-       <h1 className="text-3xl">Time until hackathon starts</h1>
-      <div className="flex items-start justify-center gap-1.5 text-5xl leading-none sm:gap-2 sm:text-6xl md:text-7xl lg:text-8xl">
+       <h1 className="text-xl sm:text-2xl md:text-3xl">Time until hackathon starts</h1>
+      <div className="flex items-start justify-center gap-1.5 text-4xl leading-none sm:gap-2 sm:text-5xl md:text-6xl lg:text-8xl">
         <TimePart value={days} label="days" />
         <span className="translate-y-[-0.06em] opacity-80">:</span>
         <TimePart value={hours} label="hours" />
@@ -74,7 +74,7 @@ function TimePart({ value, label }: { value: string; label: string }) {
   return (
     <div className="flex min-w-[1.4em] flex-col items-center">
       <span>{value}</span>
-      <span className="mt-2 text-lg tracking-[0.18em] text-white/80 sm:text-xl md:text-2xl">
+      <span className="mt-1 sm:mt-2 text-sm sm:text-lg tracking-[0.18em] text-white/80 sm:text-xl md:text-2xl">
         {label}
       </span>
     </div>

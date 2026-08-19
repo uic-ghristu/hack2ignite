@@ -70,9 +70,9 @@ export function OverlapSection({ className }: { className?: string }) {
       )}
     >
       <Snowfall 
-      snowflakeCount={15}
+      snowflakeCount={50}
       speed={[0, 0.5]}
-      wind={[0, 0.5]}
+      wind={[0, 1]}
       radius={[0.5, 1.5]}
       />
       <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-20 pt-16 sm:px-10 md:pt-20">
