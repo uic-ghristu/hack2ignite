@@ -9,37 +9,63 @@ import {
 } from "motion/react";
 import { cn } from "@/lib/utils";
 import Snowfall from "react-snowfall";
+import { pixelFont } from "@/app/page";
+import Link from "next/link";
 
 const events = [
   {
     date: "20 Aug 2026",
     title: "Registration Starts",
-    description: "Registrations open. Sign up and lock in your team.",
+    Description: () => (
+      <p className="mt-2 leading-snug text-white/75 sm:text-lg">
+        Registrations open. Sign up and lock in your team.
+      </p>
+    ),
   },
   {
     date: "16–17 Sept 2026",
     title: "Online Prototype Round",
-    description:
-      "Problem statements drop. Start building your prototype online.",
+    Description: () => (
+      <p className="mt-2 text-base leading-snug text-white/75 sm:text-lg">
+        <Link href="/rulebook" className="pr-1">
+          Must read <span className="underline">
+            RuleBook
+          </span>.
+        </Link>
+        Problem statements drop on website and via email to registered teams. 48 hour to build your solution
+      </p>
+    ),
   },
   {
     date: "25 Sept 2026",
     title: "Results & Shortlisting",
-    description:
-      "Online round results are out. Shortlisted teams move to the on-campus round.",
+    Description: () => (
+      <p className="mt-2 text-base leading-snug text-white/75 sm:text-lg">
+        Online round results are out. Top 30 teams will be shortlisted and move to the on-campus round.
+      </p>
+    ),
   },
   {
     date: "3 Oct 2026",
     title: "On-Campus Round",
-    description:
-      "Shortlisted teams come on campus to tweak, add features, polish the product, and pitch.",
+    Description: () => (
+      <p className="mt-2 text-base leading-snug text-white/75 sm:text-lg">
+        Shortlisted teams come on campus to tweak, add features, polish the product, and pitch.
+      </p>
+    ),
   },
   {
     date: "3 Oct 2026",
     title: "Final Results",
-    description: "Winners announced the same day.",
+    Description: () => (
+      <p className="mt-2 text-base leading-snug text-white/75 sm:text-lg">
+        Winners announced the same day.
+      </p>
+    ),
   },
-] as const;
+];
+
+type TimelineEvent = (typeof events)[number];
 
 type Point = { x: number; y: number };
 
@@ -225,7 +251,7 @@ function TimelineCard({
   reduceMotion,
 }: {
   ref: (el: HTMLLIElement | null) => void;
-  event: (typeof events)[number];
+  event: TimelineEvent;
   side: "left" | "right";
   reduceMotion: boolean;
 }) {
@@ -243,11 +269,17 @@ function TimelineCard({
           left ? "md:col-start-1 md:mr-14" : "md:col-start-2 md:ml-14"
         )}
       >
-        <p className="text-base text-white/80 sm:text-2xl">{event.date}</p>
-        <h2 className="mt-1 text-2xl leading-none sm:text-4xl">{event.title}</h2>
-        <p className="mt-2 text-base leading-snug text-white/75 sm:text-xl">
-          {event.description}
-        </p>
+        <p className={cn(
+          pixelFont.className,
+          "text-base text-white/80 sm:text-2xl"
+        )}
+        >{event.date}</p>
+        <h2 className={cn(
+          "mt-1 text-2xl leading-none sm:text-4xl",
+          pixelFont.className
+        )}
+        >{event.title}</h2>
+        <event.Description />
       </motion.article>
     </li>
   );

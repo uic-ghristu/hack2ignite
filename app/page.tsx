@@ -83,7 +83,7 @@ function LandingPage() {
         </div>
       </div>
 
-      <Timeline className={pixelFont.className} />
+      <Timeline />
 
       {/* <div className="h-screen w-full flex items-start justify-center px-2 py-2 bg-gray-900">
         <Image
