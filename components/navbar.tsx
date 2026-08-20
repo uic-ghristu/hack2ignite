@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { name: "Prizes", href: "#prizes" },
   { name: "Tracks", href: "#tracks" },
   { name: "Timeline", href: "#timeline" },
+  { name: "Rules", href: "/rulebook" },
 ] as const;
 
 const overlayEase = [0.22, 1, 0.36, 1] as const;
