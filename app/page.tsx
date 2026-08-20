@@ -17,7 +17,7 @@ const pixelFont = Jersey_20({
   weight: "400"
 })
 
-export const reg_link = "https://unstop.com/o/5zXnaj1?lb=hPo8wViC&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Abhaynim8618"
+export const reg_link = "https://unstop.com/p/hack-2-ignite-gh-raisoni-international-skill-tech-university-1740694?lb=7esWD7WY"
 
 function LandingPage() {
   return (
