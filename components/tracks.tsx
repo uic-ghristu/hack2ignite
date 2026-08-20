@@ -21,7 +21,7 @@ export function Tracks({ className }: { className?: string }) {
     <section
       id="tracks"
       className={cn(
-        "w-full bg-[#90C5EF] px-4 py-16 sm:px-8 md:px-10 md:py-24 min-h-screen",
+        "h-auto min-h-0 w-full overflow-x-hidden bg-[#90C5EF] px-4 py-16 sm:px-8 md:px-10 md:py-24",
         className
       )}
     >

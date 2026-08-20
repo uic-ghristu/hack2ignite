@@ -92,13 +92,13 @@ export function Timeline({ className }: { className?: string }) {
         const r = card.getBoundingClientRect();
         const left = i % 2 === 0;
         const y = r.top - box.top + 28;
+        // On mobile: all dots align to the same x (straight vertical line)
+        // On desktop: alternate left/right
         const x = desktop
           ? left
             ? r.right - box.left + 10
             : r.left - box.left - 10
-          : left
-            ? 22
-            : 34;
+          : 20;
         nodes.push({ x, y });
       });
 
@@ -200,7 +200,7 @@ export function Timeline({ className }: { className?: string }) {
           </svg>
         )}
 
-        <ol className="space-y-12 md:space-y-24">
+        <ol className="space-y-8 md:space-y-24">
           {events.map((event, i) => (
             <TimelineCard
               key={`${event.title}-${event.date}`}
@@ -239,13 +239,13 @@ function TimelineCard({
         viewport={{ once: true, amount: 0.45 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "relative z-10 ml-12 p-5 text-white sm:p-6 md:ml-0",
+          "relative z-10 ml-10 p-4 text-white sm:p-6 md:ml-0",
           left ? "md:col-start-1 md:mr-14" : "md:col-start-2 md:ml-14"
         )}
       >
-        <p className="text-xl text-white/80 sm:text-2xl">{event.date}</p>
-        <h2 className="mt-1 text-3xl leading-none sm:text-4xl">{event.title}</h2>
-        <p className="mt-3 text-lg leading-snug text-white/75 sm:text-xl">
+        <p className="text-base text-white/80 sm:text-2xl">{event.date}</p>
+        <h2 className="mt-1 text-2xl leading-none sm:text-4xl">{event.title}</h2>
+        <p className="mt-2 text-base leading-snug text-white/75 sm:text-xl">
           {event.description}
         </p>
       </motion.article>
