@@ -114,7 +114,7 @@ export function FlyingBee() {
           ease: "easeInOut",
         });
 
-        await Promise.all([flightX.finished, flightY.finished]).catch(() => {});
+        await Promise.all([flightX.finished, flightY.finished]).catch(() => { });
         if (cancelled) break;
 
         goingLeft = !goingLeft;
@@ -126,7 +126,7 @@ export function FlyingBee() {
             duration: 0.34,
             ease: [0.22, 1, 0.36, 1],
           }).finished,
-        ]).catch(() => {});
+        ]).catch(() => { });
         if (cancelled) break;
 
         await wait(180);
@@ -162,12 +162,11 @@ export function FlyingBee() {
             height: BEE_SIZE,
           }}
         >
-          <Image
+          <img
             src="/stock/bee.gif"
             alt=""
             width={BEE_SIZE}
             height={BEE_SIZE}
-            unoptimized
             className="h-full w-full [image-rendering:pixelated]"
           />
         </motion.div>

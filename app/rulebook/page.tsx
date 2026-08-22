@@ -58,7 +58,7 @@ export default function RuleBook() {
             <Snowfall snowflakeCount={18} speed={[0, 0.4]} wind={[0, 0.3]} radius={[0.5, 1.5]} />
             <nav className="relative z-10 flex items-center justify-between px-6 pt-8 sm:px-10 md:px-20">
                 <Link href="/" className="group flex items-center gap-3">
-                    <Image src="/main-logo.png" width={100} height={48} alt="Hack 2 Ignite" className="pointer-events-none" />
+                    <img src="https://res.cloudinary.com/e6c908eq/image/upload/v1787411962/main-logo.png" width={100} height={48} alt="Hack 2 Ignite" className="pointer-events-none" />
 
                 </Link>
                 <span className={cn(pixelFont.className, "text-sm tracking-widest text-white/30 uppercase")}>hack2ignite</span>

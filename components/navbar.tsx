@@ -90,9 +90,9 @@ export function Navbar({ className, registerHref }: NavbarProps) {
         )}
       >
         <div>
-          <Image
+          <img
             className="pointer-events-none"
-            src={"/main-logo.png"}
+            src={"https://res.cloudinary.com/e6c908eq/image/upload/v1787411962/main-logo.png"}
             width={70}
             height={70}
             alt="logo"
@@ -141,9 +141,9 @@ export function Navbar({ className, registerHref }: NavbarProps) {
             transition={{ duration: 0.3, ease: overlayEase }}
           >
             <div className="flex items-center justify-between px-4 py-4">
-              <Image
+              <img
                 className="pointer-events-none"
-                src={"/main-logo.png"}
+                src={"https://res.cloudinary.com/e6c908eq/image/upload/v1787411962/main-logo.png"}
                 width={70}
                 height={70}
                 alt="logo"

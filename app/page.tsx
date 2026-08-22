@@ -31,11 +31,11 @@ function LandingPage() {
             className="h-screen w-full absolute z-10" />
 
           <div className="z-20 flex items-center justify-center flex-col px-4">
-            <Image
+            <img
               width={500}
               height={500}
               alt='logo'
-              src={'/main-logo.png'}
+              src={'https://res.cloudinary.com/e6c908eq/image/upload/v1787411962/main-logo.png'}
             />
             <div className={cn(
               pixelFont.className,
@@ -53,7 +53,7 @@ function LandingPage() {
                   )}
                 >
                   Register on
-                  <Image
+                  <img
                     width={80}
                     height={80}
                     alt='unstop.com'
@@ -70,7 +70,7 @@ function LandingPage() {
           <div className="sticky top-0 z-0 h-screen w-full overflow-hidden">
             <CountdownTimer className={pixelFont.className} />
             <FlyingBee />
-            <Image
+            <img
               className='absolute bottom-0 w-full object-cover object-bottom'
               height={1000}
               width={2000}
@@ -86,7 +86,7 @@ function LandingPage() {
       <Timeline />
 
       {/* <div className="h-screen w-full flex items-start justify-center px-2 py-2 bg-gray-900">
-        <Image
+        <img
           className='absolute z-0 h-full w-full rounded-sm pointer-events-none'
           width={1000}
           height={1000}
@@ -111,14 +111,14 @@ function LandingPage() {
           <div className="text-center md:text-left">
             <h2 className={cn(pixelFont.className, "text-2xl")}>Organized by:</h2>
             <div className="flex items-center justify-center gap-4">
-              <Image
+              <img
                 className='h-auto w-28 rounded-md sm:w-40 md:w-[250px]'
                 src={'/skill-tech.png'}
                 width={250}
                 height={250}
                 alt='skill tech'
               />
-              <Image
+              <img
                 className='h-auto w-24 sm:w-32 md:w-[200px]'
                 src={'/uic.png'}
                 width={200}

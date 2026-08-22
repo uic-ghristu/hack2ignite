@@ -69,11 +69,11 @@ export function OverlapSection({ className }: { className?: string }) {
         "relative z-20 -mt-[32vh] min-h-screen rounded-t-[2.5rem] bg-gray-900 text-white shadow-[0_-18px_50px_rgba(0,0,0,0.18)] will-change-transform md:rounded-t-[3.5rem]"
       )}
     >
-      <Snowfall 
-      snowflakeCount={50}
-      speed={[0, 0.5]}
-      wind={[0, 1]}
-      radius={[0.5, 1.5]}
+      <Snowfall
+        snowflakeCount={50}
+        speed={[0, 0.5]}
+        wind={[0, 1]}
+        radius={[0.5, 1.5]}
       />
       <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-20 pt-16 sm:px-10 md:pt-20">
         <header className="flex flex-col items-center text-center">
@@ -172,7 +172,7 @@ function PrizeCard({
         }}
         className={cn("relative", featured ? "w-52 sm:w-60 md:w-64" : "w-40 sm:w-44 md:w-48")}
       >
-        <Image
+        <img
           src={prize.chest}
           alt={`${prize.rank} place ${prize.metal} chest`}
           width={437}
